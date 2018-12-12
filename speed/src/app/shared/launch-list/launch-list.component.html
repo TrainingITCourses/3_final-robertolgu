@@ -1,0 +1,21 @@
+<div>Resultado Búsqueda ({{ filteredLaunches.length}}):</div>
+
+<span>Ordenar: </span>
+
+<select #selectOptionSort (change)="optionSortChange.next(selectOptionSort.value)">
+    <option *ngFor="let o of optionsSort" [value]="o.value">
+        {{o.name}}
+    </option>
+</select>
+
+<div>
+  <ul>
+    <a
+      *ngFor="let launch of filteredLaunches"
+      [routerLink]="['/launch', launch.id]">
+      <app-launch-card [launch]="launch">
+      </app-launch-card>
+    </a>
+  </ul>
+
+</div>

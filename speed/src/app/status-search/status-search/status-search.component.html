@@ -1,0 +1,7 @@
+<div>
+  <h4>Estado seleccionado: {{ status.name }} <button (click)="backButtomClick()">Volver...</button></h4>
+  <app-launch-list
+    [filteredLaunches]='filteredLaunches'
+    (optionSortChange)='optionSortChange($event)'>
+  </app-launch-list>
+</div>
